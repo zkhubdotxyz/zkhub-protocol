@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#030602" />
+  <title>ZKHUB App: desktop for Robinhood Chain</title>
+  <meta name="description" content="ZKHUB desktop: launchpad, live Robinhood Chain data and local launch drafts in one window manager." />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" />
+</head>
+<body class="wallpaper-drift">
+  <div class="shell" id="shell">
+    <!-- CA slot: always visible, full address, click-to-copy once stated -->
+    <div class="ca" id="ca" data-live="false" role="group" aria-label="Contract address">
+      <span class="ca-tag">CA</span>
+      <span class="ca-val" id="ca-val">Not yet announced</span>
+      <span class="ca-date" id="ca-date" hidden></span>
+      <span class="ca-copy" id="ca-copy" hidden>Copy</span>
+      <span class="ca-links">
+        <span class="social" id="social-x" role="img" aria-label="X, not yet linked" aria-disabled="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M17.75 3h3.07l-6.7 7.66L22 21h-6.17l-4.83-6.32L5.47 21H2.4l7.17-8.2L2 3h6.33l4.37 5.78L17.75 3zm-1.08 16.16h1.7L7.4 4.75H5.58l11.09 14.41z"/></svg></span>
+        <span class="social" id="social-gh" role="img" aria-label="GitHub, not yet linked" aria-disabled="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.15-1.11-1.46-1.11-1.46-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.5 9.5 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2z"/></svg></span>
+      </span>
+    </div>
+
+    <div class="menubar glass" id="menubar" role="menubar" aria-label="Menu bar"></div>
+    <main class="desktop" id="desktop" aria-label="Desktop"><div class="icons" id="icons"></div></main>
+    <div class="windows" id="windows"></div>
+    <aside class="widgets" id="widgets" aria-label="Widgets"></aside>
+    <nav class="dock glass" id="dock" aria-label="Dock"></nav>
+    <div id="overlay"></div>
+    <div class="toasts" id="toasts" aria-live="polite"></div>
+    <div class="boot" id="boot" hidden></div>
+  </div>
+  <noscript><p>ZKHUB desktop needs JavaScript.</p></noscript>
+  <script type="module" src="./main.ts"></script>
+</body>
+</html>

@@ -1,0 +1,281 @@
+{
+ "method": {
+  "algo": "k-means++ (seeded), OKLab",
+  "k": 16,
+  "iterations": 40,
+  "stride": 8,
+  "samples": 166779,
+  "files": 5
+ },
+ "clusters": [
+  {
+   "hex": "#fdfdfc",
+   "file": "brand/LOGO ZKHUB PNG...png",
+   "x": 1040,
+   "y": 904,
+   "share": 0.1464,
+   "L": 0.994,
+   "C": 0.001,
+   "h": 106.423
+  },
+  {
+   "hex": "#3b5c14",
+   "file": "brand/LOGO ZKHUB PNG.png",
+   "x": 1808,
+   "y": 1368,
+   "share": 0.1138,
+   "L": 0.434,
+   "C": 0.106,
+   "h": 131.292
+  },
+  {
+   "hex": "#1b3003",
+   "file": "brand/LOGO ZKHUB PNG.png",
+   "x": 1632,
+   "y": 872,
+   "share": 0.0979,
+   "L": 0.281,
+   "C": 0.073,
+   "h": 131.689
+  },
+  {
+   "hex": "#162602",
+   "file": "brand/LOGO ZKHUB JPG.jpg.jpeg",
+   "x": 368,
+   "y": 104,
+   "share": 0.0885,
+   "L": 0.245,
+   "C": 0.063,
+   "h": 130.225
+  },
+  {
+   "hex": "#060803",
+   "file": "brand/LOGO ZKHUB JPG.jpg.jpeg",
+   "x": 872,
+   "y": 0,
+   "share": 0.0807,
+   "L": 0.129,
+   "C": 0.016,
+   "h": 123.763
+  },
+  {
+   "hex": "#101e02",
+   "file": "brand/LOGO ZKHUB PNG.png",
+   "x": 256,
+   "y": 936,
+   "share": 0.0739,
+   "L": 0.214,
+   "C": 0.054,
+   "h": 131.136
+  },
+  {
+   "hex": "#0c1602",
+   "file": "brand/LOGO ZKHUB PNG.png",
+   "x": 512,
+   "y": 696,
+   "share": 0.0693,
+   "L": 0.184,
+   "C": 0.043,
+   "h": 129.763
+  },
+  {
+   "hex": "#070b0e",
+   "file": "reference/SAMPUL ZKHUB JPG.jpg.jpeg",
+   "x": 688,
+   "y": 0,
+   "share": 0.0682,
+   "L": 0.146,
+   "C": 0.01,
+   "h": 238.648
+  },
+  {
+   "hex": "#2e4e06",
+   "file": "brand/LOGO ZKHUB PNG.png",
+   "x": 1688,
+   "y": 1128,
+   "share": 0.0609,
+   "L": 0.384,
+   "C": 0.102,
+   "h": 131.918
+  },
+  {
+   "hex": "#253d03",
+   "file": "brand/LOGO ZKHUB JPG.jpg.jpeg",
+   "x": 1720,
+   "y": 976,
+   "share": 0.0606,
+   "L": 0.328,
+   "C": 0.086,
+   "h": 130.526
+  },
+  {
+   "hex": "#030602",
+   "file": "brand/LOGO ZKHUB PNG.png",
+   "x": 1040,
+   "y": 248,
+   "share": 0.0533,
+   "L": 0.114,
+   "C": 0.018,
+   "h": 136.247
+  },
+  {
+   "hex": "#070f01",
+   "file": "brand/LOGO ZKHUB PNG.png",
+   "x": 768,
+   "y": 432,
+   "share": 0.0491,
+   "L": 0.154,
+   "C": 0.037,
+   "h": 129.947
+  },
+  {
+   "hex": "#0b0e08",
+   "file": "brand/LOGO ZKHUB PNG.png",
+   "x": 1992,
+   "y": 240,
+   "share": 0.0268,
+   "L": 0.158,
+   "C": 0.013,
+   "h": 129.064
+  },
+  {
+   "hex": "#b2f239",
+   "file": "reference/ZKHUB 1.jpg.jpeg",
+   "x": 160,
+   "y": 352,
+   "share": 0.0047,
+   "L": 0.886,
+   "C": 0.212,
+   "h": 127.506
+  },
+  {
+   "hex": "#628948",
+   "file": "reference/ZKHUB 1.jpg.jpeg",
+   "x": 792,
+   "y": 576,
+   "share": 0.0038,
+   "L": 0.585,
+   "C": 0.103,
+   "h": 133.99
+  },
+  {
+   "hex": "#a0bb6a",
+   "file": "reference/ZKHUB 1.jpg.jpeg",
+   "x": 584,
+   "y": 368,
+   "share": 0.002,
+   "L": 0.753,
+   "C": 0.111,
+   "h": 124.109
+  }
+ ],
+ "roles": {
+  "dark": {
+   "hex": "#030602",
+   "file": "brand/LOGO ZKHUB PNG.png",
+   "x": 1040,
+   "y": 248,
+   "share": 0.0533,
+   "L": 0.114,
+   "C": 0.018,
+   "h": 136.247
+  },
+  "bgGreen": {
+   "hex": "#1b3003",
+   "file": "brand/LOGO ZKHUB PNG.png",
+   "x": 1632,
+   "y": 872,
+   "share": 0.0979,
+   "L": 0.281,
+   "C": 0.073,
+   "h": 131.689
+  },
+  "accent": {
+   "hex": "#b2f239",
+   "file": "reference/ZKHUB 1.jpg.jpeg",
+   "x": 160,
+   "y": 352,
+   "share": 0.0047,
+   "L": 0.886,
+   "C": 0.212,
+   "h": 127.506
+  },
+  "white": {
+   "hex": "#fdfdfc",
+   "file": "brand/LOGO ZKHUB PNG...png",
+   "x": 1040,
+   "y": 904,
+   "share": 0.1464,
+   "L": 0.994,
+   "C": 0.001,
+   "h": 106.423
+  },
+  "mid": {
+   "hex": "#3b5c14",
+   "file": "brand/LOGO ZKHUB PNG.png",
+   "x": 1808,
+   "y": 1368,
+   "share": 0.1138,
+   "L": 0.434,
+   "C": 0.106,
+   "h": 131.292
+  }
+ },
+ "tokens": {
+  "--bg": {
+   "value": "#030602",
+   "from": "sampled",
+   "role": "dark"
+  },
+  "--bg-2": {
+   "value": "#060b04",
+   "from": "derived",
+   "role": "dark L+0.025"
+  },
+  "--card": {
+   "value": "#0d120a",
+   "from": "derived",
+   "role": "dark L+0.06"
+  },
+  "--card-2": {
+   "value": "#151b13",
+   "from": "derived",
+   "role": "dark L+0.10"
+  },
+  "--fg": {
+   "value": "#fdfdfc",
+   "from": "sampled",
+   "role": "white"
+  },
+  "--muted": {
+   "value": "#a7ada5",
+   "from": "derived",
+   "role": "fg toned to L0.74"
+  },
+  "--dim": {
+   "value": "#6f776c",
+   "from": "derived",
+   "role": "fg toned to L0.56"
+  },
+  "--accent": {
+   "value": "#b2f239",
+   "from": "sampled",
+   "role": "accent"
+  },
+  "--accent-fg": {
+   "value": "#030602",
+   "from": "sampled",
+   "role": "dark"
+  },
+  "--green-mid": {
+   "value": "#3b5c14",
+   "from": "sampled",
+   "role": "mid green"
+  },
+  "--green-deep": {
+   "value": "#1b3003",
+   "from": "sampled",
+   "role": "deep green"
+  }
+ }
+}

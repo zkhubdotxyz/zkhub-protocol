@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#030602" />
+  <title>ZKHUB: the ZK layer for Robinhood Chain</title>
+  <meta name="description" content="A ZK-native launchpad built for transparent, fair, and verifiable token launches on Robinhood Chain." />
+  <meta property="og:title" content="ZKHUB: launch tokens, prove fairness" />
+  <meta property="og:description" content="A ZK-native launchpad built for transparent, fair, and verifiable token launches on Robinhood Chain." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://zkhub.xyz/" />
+  <meta name="twitter:card" content="summary" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" />
+</head>
+<body>
+  <div class="progress" id="progress" aria-hidden="true"></div>
+
+  <div class="top" id="top-stack">
+    <!-- CA slot: always visible, full address, click-to-copy once stated -->
+    <div class="ca" id="ca" data-live="false" role="group" aria-label="Contract address">
+      <span class="ca-tag">CA</span>
+      <span class="ca-val" id="ca-val">Not yet announced</span>
+      <span class="ca-date" id="ca-date" hidden></span>
+      <span class="ca-copy" id="ca-copy" hidden>Copy</span>
+    </div>
+
+    <header class="hdr" id="hdr">
+      <div class="wrap hdr-in">
+        <a href="#hero" class="brand" aria-label="ZKHUB home">
+          <img class="logo" src="/logo.png" alt="" width="22" height="22" />
+          ZKHUB
+        </a>
+        <nav class="nav" aria-label="Sections">
+          <a href="#overview">Overview</a><a href="#tools">Tools</a><a href="#how">How it works</a><a href="#token">Token</a><a href="#network">Network</a>
+        </nav>
+        <div class="hdr-r">
+          <span class="social" id="social-x" role="img" aria-label="X, not yet linked" aria-disabled="true">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M17.75 3h3.07l-6.7 7.66L22 21h-6.17l-4.83-6.32L5.47 21H2.4l7.17-8.2L2 3h6.33l4.37 5.78L17.75 3zm-1.08 16.16h1.7L7.4 4.75H5.58l11.09 14.41z"/></svg>
+          </span>
+          <span class="social" id="social-gh" role="img" aria-label="GitHub, not yet linked" aria-disabled="true">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.15-1.11-1.46-1.11-1.46-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.5 9.5 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2z"/></svg>
+          </span>
+          <a class="btn btn-accent btn-sm" href="/app/">Launch app</a>
+          <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="drawer"><i></i><i></i></button>
+        </div>
+      </div>
+    </header>
+  </div>
+
+  <div class="drawer" id="drawer" hidden>
+    <a href="#overview">Overview</a><a href="#tools">Tools</a><a href="#how">How it works</a><a href="#token">Token</a><a href="#network">Network</a>
+  </div>
+
+  <main>
+    <section class="hero" id="hero">
+      <canvas id="hero-canvas" aria-hidden="true"></canvas>
+      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="wrap hero-in">
+        <p class="label accent rv">For Robinhood Chain</p>
+        <h1 class="rv" style="--d:1"><span class="grad">Launch tokens.</span> Prove fairness.</h1>
+        <p class="lede rv" style="--d:2">A ZK-native launchpad built for transparent, fair, and verifiable token launches on Robinhood Chain. Live chain data today, proof tooling as it ships.</p>
+        <div class="cta rv" style="--d:3">
+          <a class="btn btn-accent" href="/app/">Launch app</a>
+          <a class="btn" href="/app/?open=launchpad">Launchpad</a>
+          <a class="btn" href="/app/?open=docs">Read the docs</a>
+        </div>
+        <ul class="flags rv" style="--d:4">
+          <li><span class="dot live"></span> Live: chain data</li>
+          <li><span class="dot ring"></span> Testing: launchpad</li>
+          <li><span class="dot ring"></span> Preview: ZK proofs</li>
+        </ul>
+
+        <div class="stats rv" style="--d:5" id="hero-stats">
+          <div class="stat"><span class="label">Block height</span><b id="s-block" data-n>—</b><span class="sub" id="s-block-sub">connecting</span></div>
+          <div class="stat"><span class="label">Gas price</span><b id="s-gas">—</b><span class="sub">gwei</span></div>
+          <div class="stat"><span class="label">Chain TVL</span><b id="s-tvl">—</b><span class="sub">DefiLlama</span><svg class="spark" id="spark" viewBox="0 0 100 24" preserveAspectRatio="none" aria-hidden="true"></svg></div>
+          <div class="stat"><span class="label">Pairs tracked</span><b id="s-pairs">—</b><span class="sub" id="s-vol">24h vol —</span></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="ticker" aria-label="Live pair ticker"><div class="ticker-track" id="ticker"><span class="tk-empty">Waiting for market data…</span></div></div>
+
+    <section id="launches" class="sec line-b">
+      <div class="wrap">
+        <div class="sec-head rv">
+          <div><p class="label">Live on Robinhood Chain</p><h2>Top pairs by volume</h2></div>
+          <span class="live-pill" id="pairs-status"><i></i>Loading</span>
+        </div>
+        <div class="table rv" id="pairs" role="table" aria-label="Top pairs">
+          <div class="tr th" role="row"><span>Token</span><span class="r">Price</span><span class="r">24h</span><span class="r hide-s">Volume</span><span class="r hide-s">Liquidity</span></div>
+          <div id="pairs-body"><div class="tr skel"></div><div class="tr skel"></div><div class="tr skel"></div><div class="tr skel"></div></div>
+        </div>
+        <p class="fine rv">Third-party data from DexScreener. Token names are self-declared and unverified. Not financial advice.</p>
+      </div>
+    </section>
+
+    <section id="overview" class="sec wrap">
+      <p class="label rv">What ZKHUB is</p>
+      <p class="statement rv" style="--d:1">The ZK layer for Robinhood Chain: a desktop for launching tokens, analyzing on-chain activity and bringing cryptographic verification to the network. <span class="mut">Read-only by default, built on public sources, honest about what is not live yet.</span></p>
+    </section>
+
+    <section id="tools" class="sec line-t">
+      <div class="wrap">
+        <div class="sec-head rv"><div><p class="label">Tools</p><h2 class="h2-l">One hub, six programs.</h2></div></div>
+        <div class="grid3 rv" id="tool-grid">
+          <a class="card" href="#network"><div class="card-h"><h3>Chain Pulse</h3><span class="badge live"><i></i>Live</span></div><p>Block height, gas and a rolling block feed straight from the public RPC.</p><span class="more">Open feed →</span></a>
+          <a class="card" href="#launches"><div class="card-h"><h3>Pair Radar</h3><span class="badge live"><i></i>Live</span></div><p>Top pairs on the chain ranked by volume, with price, change and liquidity.</p><span class="more">Open radar →</span></a>
+          <a class="card" href="#hero"><div class="card-h"><h3>TVL Tracker</h3><span class="badge live"><i></i>Live</span></div><p>Chain-level TVL and its recent trend, sourced from DefiLlama.</p><span class="more">See TVL →</span></a>
+          <div class="card"><div class="card-h"><h3>Wallet Trace</h3><span class="badge plan"><i></i>Planned</span></div><p>Group wallets that share a funding source and draw the links between them.</p><span class="more">Not built yet</span></div>
+          <div class="card"><div class="card-h"><h3>Proof Ledger</h3><span class="badge prev"><i></i>Preview</span></div><p>Illustrative view of how zero-knowledge proofs would be recorded and checked.</p><span class="more">Concept only</span></div>
+          <div class="card"><div class="card-h"><h3>Sealed Launches</h3><span class="badge plan"><i></i>Planned</span></div><p>Batch-cleared launches with proof of fair clearing. Nothing is deployed.</p><span class="more">Not built yet</span></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="band" aria-hidden="true"><div class="band-track" id="band"></div></div>
+
+    <section id="how" class="sec wrap">
+      <p class="label rv">How it works</p>
+      <h2 class="h2-l rv" style="--d:1">Four steps from chain to clarity.</h2>
+      <ol class="steps">
+        <li class="rv" style="--d:1"><span class="num">01</span><h3>Connect to the chain</h3><p>Public RPC and open data APIs. No wallet connection and no sign-in.</p></li>
+        <li class="rv" style="--d:2"><span class="num">02</span><h3>Read the state</h3><p>Blocks, gas, TVL and DEX pairs are fetched live in your browser.</p></li>
+        <li class="rv" style="--d:3"><span class="num">03</span><h3>See the trend</h3><p>Numbers are refreshed on a fixed clock and drawn as they change.</p></li>
+        <li class="rv" style="--d:4"><span class="num">04</span><h3>Judge for yourself</h3><p>Every figure names its source. Nothing here is a verdict or advice.</p></li>
+      </ol>
+    </section>
+
+    <section id="token" class="sec line-t">
+      <div class="wrap">
+        <div class="sec-head rv"><div><p class="label">Token</p><h2 class="h2-l">The $ZKHUB token.</h2><p class="lede-s">No token contract has been announced. The only address to trust will appear in the bar at the top of this page, and nowhere else.</p></div></div>
+        <div class="tokcard rv">
+          <div><span class="label">Contract address</span><p class="mono big" id="tok-ca">Not yet announced</p></div>
+          <div><span class="label">Chain</span><p class="mono big">Robinhood Chain · 4663</p></div>
+          <div><span class="label">Status</span><p class="mono big"><span class="dot ring"></span> Awaiting announcement</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="network" class="sec wrap pb">
+      <div class="netcard rv">
+        <div class="net-l">
+          <p class="label">Network</p>
+          <h2>Robinhood Chain</h2>
+          <dl class="dl">
+            <dt>Chain ID</dt><dd>4663</dd>
+            <dt>Native</dt><dd>ETH</dd>
+            <dt>Height</dt><dd id="n-block">—</dd>
+            <dt>Gas</dt><dd id="n-gas">—</dd>
+            <dt>TVL</dt><dd id="n-tvl">—</dd>
+            <dt>Explorer</dt><dd><a href="https://robinhoodchain.blockscout.com" target="_blank" rel="noreferrer noopener">Blockscout ↗</a></dd>
+            <dt>Access</dt><dd>Read-only</dd>
+          </dl>
+        </div>
+        <div class="net-r">
+          <div class="feed-h"><span class="label">Block feed</span><span class="live-pill" id="feed-status"><i></i>Connecting</span></div>
+          <ul class="feed" id="feed" aria-live="off"></ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec line-t final">
+      <div class="wrap center">
+        <h2 class="big-h rv">Start exploring the network.</h2>
+        <div class="cta center-cta rv" style="--d:1"><a class="btn btn-accent" href="/app/">Launch app</a><a class="lnk" href="/app/?open=docs">Docs</a><a class="lnk" href="#tools">Tools</a></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap foot-in">
+      <div class="foot-l"><img class="logo sm" src="/logo.png" alt="" width="18" height="18" /><span>Live data hub for Robinhood Chain.</span></div>
+      <nav class="foot-n"><a href="/app/">Launch app</a><a href="#tools">Tools</a><a href="#token">Token</a><a href="https://robinhoodchain.blockscout.com" target="_blank" rel="noreferrer noopener">Explorer</a></nav>
+    </div>
+    <div class="wrap fine foot-c">Not affiliated with Robinhood. © 2026 zkhub.xyz</div>
+  </footer>
+
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>
